@@ -1,0 +1,28 @@
+In computer science, a closure (also lexical closure, function closure or function value) is a function 
+	together with a referencing environment for the nonlocal names (free variables) of that function. 
+	Such a function is said to be "closed over" its free variables. The referencing environment binds the nonlocal names 
+	to the corresponding variables in scope at the time the closure is created, additionally extending 
+	their lifetime to at least as long as the lifetime of the closure itself.
+
+The concept of closures was developed in the 1960s and was first fully implemented as a language feature 
+	in the programming language Scheme to implement lexically-scoped first-class functions. Since then, many languages
+	have been designed to support closures. The explicit use of closures is associated with functional programming 
+	and with languages such as ML and Lisp. Traditional imperative languages (such as Algol, C and Pascal) had no 
+	support for closures as these languages neither support nonlocal names (which can be introduced only in nested 
+	or anonymous functions) nor higher-order functions. Modern garbage-collected 
+	imperative languages (such as C#, but notably not Java) and many interpreted and scripting languages 
+	do support higher-order functions and closures.
+
+Closures are used to implement continuation passing style, and in this manner, hide state. 
+	Constructs such as objects and control structures can thus be implemented with closures. 
+	In some languages, a closure may occur when a function is defined within another function, and the inner function 
+	refers to local variables of the outer function. At run-time, when the outer function executes, a closure is formed, 
+	consisting of the inner function’s code and references to any variables of the outer function required by the closure; 
+	such variables are called the upvalues of the closure.
+
+The term closure is often mistakenly used to mean anonymous function. This is probably because most languages 
+	implementing anonymous functions allow them to form closures and programmers are usually introduced to both concepts at 
+	the same time. These are, however, distinct concepts. A closure retains a reference to the environment at the time 
+	it was created (for example, to the current value of a local variable in the enclosing scope) while a generic anonymous function need not do this.
+
+Closures are closely related to function objects; the transformation from the former to the latter is known as defunctionalization or lambda lifting.
