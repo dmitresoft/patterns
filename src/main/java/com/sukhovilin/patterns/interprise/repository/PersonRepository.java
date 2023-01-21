@@ -7,7 +7,7 @@ import java.util.Map;
 class PersonRepository implements Repository<Integer, String> {
 
 	private static int _id = 1;
-	private Map<Integer, String> persons = new HashMap<Integer, String>();
+	private final Map<Integer, String> persons = new HashMap<>();
 
 	private int getId() {
 		return _id++;
