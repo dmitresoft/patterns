@@ -1,6 +1,8 @@
 package com.sukhovilin.lang.closure;
 
-public class SampleAll {
+import java.util.function.Predicate;
+
+public class Program {
 
 	public static void main(String[] args) {
 
@@ -15,15 +17,15 @@ public class SampleAll {
 	private static boolean testAll(String[] items) {
 		return all(new Predicate<String>() {
 			@Override
-			public boolean apply(String input) {
+			public boolean test(String input) {
 				return input.length() == 1;
 			}
 		}, items);
 	}
 
-	private static final <T> boolean all(Predicate<T> predicate, T... items) {
+	private static <T> boolean all(Predicate<T> predicate, T... items) {
 		for (T item : items) {
-			if (!predicate.apply(item))
+			if (!predicate.test(item))
 				return false;
 		}
 		return true;

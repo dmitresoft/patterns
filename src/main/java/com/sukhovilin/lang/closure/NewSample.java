@@ -1,5 +1,6 @@
 package com.sukhovilin.lang.closure;
 
+import java.util.function.Function;
 import java.util.function.Supplier;
 
 public class NewSample {

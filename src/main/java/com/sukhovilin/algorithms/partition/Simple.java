@@ -41,7 +41,7 @@ public class Simple {
 		return lowp;
 	}
 
-	private static final void swap(final int[] arr, final int from, final int to) {
+	private static void swap(final int[] arr, final int from, final int to) {
 		final int tmp = arr[from];
 		arr[from] = arr[to];
 		arr[to] = tmp;

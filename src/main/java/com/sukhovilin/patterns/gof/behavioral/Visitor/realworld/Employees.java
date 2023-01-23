@@ -7,7 +7,7 @@ import java.util.List;
  * The 'ObjectStructure' class
  */
 class Employees {
-	private List<Employee> employees = new LinkedList<Employee>();
+	private final List<Employee> employees = new LinkedList<Employee>();
 
 	public void attach(Employee employee) {
 		employees.add(employee);

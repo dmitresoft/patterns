@@ -1,9 +1,10 @@
 package com.sukhovilin.algorithms.sort.quick;
 
 import java.util.Arrays;
+import java.util.Random;
 
 /**
- * Быстрая сортировка
+ * Быстрая сортировка. O(n * log(n))
  * <p>
  * В списке с элементами выбирается опорный элемент — по сути любой элемент,
  * относительно которого нужно отсортировать остальные значения. Значения меньше его — слева, значения больше — справа.
@@ -15,7 +16,7 @@ public class Sample {
 
     public static void main(String[] args) {
 
-        int[] arr = {1, 3, 2, 5, 4, 6, 7, 9, 2};
+        int[] arr = new Random().ints(20, 5, 50).toArray();
 
         System.out.println(Arrays.toString(arr));
         qSort(arr, 0, arr.length - 1);
@@ -24,18 +25,24 @@ public class Sample {
     }
 
     public static void qSort(final int[] array, final int low, final int high) {
+
         int l = low;
         int r = high;
-        final int mid = array[(low + high) / 2];
+        int mid = array[(low + high) / 2];
+
         do {
             while (array[l] < mid)
                 l++;
             while (array[r] > mid)
                 r--;
             if (l <= r) {
-                final int temp = array[l];
+
+                // swap
+                int temp = array[l];
                 array[l] = array[r];
                 array[r] = temp;
+                //~swap
+
                 l++;
                 r--;
             }

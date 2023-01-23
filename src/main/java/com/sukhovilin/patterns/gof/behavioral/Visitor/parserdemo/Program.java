@@ -13,7 +13,7 @@ public class Program {
 
 		// creating a list of tags
 
-		List<Tagable> tags = new LinkedList<Tagable>();
+		List<Tagable> tags = new LinkedList<>();
 		tags.add(new TextTag());
 		tags.add(new HTag());
 		tags.add(new TableTag());

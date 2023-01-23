@@ -1,5 +1,7 @@
 package com.sukhovilin.lang.closure;
 
+import java.util.function.Function;
+
 public class SmapleClassic {
 
 	public static void main(String[] args) {
