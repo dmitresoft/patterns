@@ -4,7 +4,12 @@ import java.util.Arrays;
 import java.util.Random;
 
 /**
- * Sorts with merge algorithm
+ * Sorts with merge algorithm.
+ *
+ * Сортировки слиянием работают по такому принципу:
+ *
+ *     Ищутся (как вариант — формируются) упорядоченные подмассивы.
+ *     Упорядоченные подмассивы соединяются в общий упорядоченный подмассив.
  * 
  * @author Dmitry Sukhovilin
  */
@@ -22,9 +27,7 @@ public class Sample {
 			arr[i] = RND.nextInt(99) + 1;
 
 		System.out.println(Arrays.toString(arr));
-
 		sort(arr, 0, arr.length - 1);
-
 		System.out.println(Arrays.toString(arr));
 	}
 
