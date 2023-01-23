@@ -1,8 +1,6 @@
 package com.sukhovilin.fuateres;
 
 
-import java.security.cert.CertificateParsingException;
-
 public class Signature {
 
 

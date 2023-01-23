@@ -1,14 +1,14 @@
-package com.sukhovilin.fuateres;
+package com.sukhovilin.fuateres.linkedlist;
 
 import java.util.LinkedList;
 import java.util.List;
 
-public class LinkedListRotation {
+public class Rotation {
 
     public static void main(String[] args) {
-        new LinkedListRotation().case1(new LinkedList<>(List.of(1, 2, 3, 4, 5, 6)));
+        new Rotation().case1(new LinkedList<>(List.of(1, 2, 3, 4, 5, 6)));
         System.out.println("------");
-        new LinkedListRotation().case2(new LinkedList<>(List.of(1, 2, 3, 4, 5, 6)));
+        new Rotation().case2(new LinkedList<>(List.of(1, 2, 3, 4, 5, 6)));
     }
 
     private void case2(List<Integer> list) { // ->
