@@ -17,3 +17,6 @@ participants
     * Client   (FlyweightApp)
           o maintains a reference to flyweight(s).
           o computes or stores the extrinsic state of flyweight(s).
+
+Паттерн Приспособленец (Flyweight) - структурный шаблон проектирования, который позволяет использовать разделяемые
+объекты сразу в нескольких контекстах. Данный паттерн используется преимущественно для оптимизации работы с памятью.

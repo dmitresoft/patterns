@@ -16,3 +16,6 @@ participants
           o asks the command to carry out the request
     * Receiver  (Calculator)
           o knows how to perform the operations associated with carrying out the request.
+
+Паттерн Заместитель (Proxy) предоставляет объект-заместитель, который управляет доступом к другому объекту.
+То есть создается объект-суррогат, который может выступать в роли другого объекта и замещать его.

@@ -12,3 +12,6 @@ participants
           		operations as well as operations defined in AbstractClass or those of other objects.
     * ConcreteClass  (CustomerDataObject)
           o implements the primitive operations ot carry out subclass-specific steps of the algorithm
+
+Шаблонный метод (Template Method) определяет общий алгоритм поведения подклассов,
+позволяя им переопределить отдельные шаги этого алгоритма без изменения его структуры.

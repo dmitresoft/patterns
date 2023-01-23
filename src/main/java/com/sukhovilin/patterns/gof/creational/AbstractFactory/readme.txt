@@ -17,3 +17,6 @@ The classes and/or objects participating in this pattern are:
           o implements the AbstractProduct interface 
     * Client  (AnimalWorld)
           o uses interfaces declared by AbstractFactory and AbstractProduct classes
+
+Паттерн "Абстрактная фабрика" (Abstract Factory) предоставляет интерфейс для создания семейств
+взаимосвязанных объектов с определенными интерфейсами без указания конкретных типов данных объектов.

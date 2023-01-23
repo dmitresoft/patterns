@@ -16,3 +16,7 @@ participants
           o if the ConcreteHandler can handle the request, it does so; otherwise it forwards the request to its successor
     * Client   (ChainApp)
           o initiates the request to a ConcreteHandler object on the chain
+
+Цепочка Обязанностей (Chain of responsibility) - поведенческий шаблон проектирования, который позволяет избежать жесткой привязки отправителя запроса к получателю.
+Все возможные обработчики запроса образуют цепочку, а сам запрос перемещается по этой цепочке.
+Каждый объект в этой цепочке при получении запроса выбирает, либо закончить обработку запроса, либо передать запрос на обработку следующему по цепочке объекту.

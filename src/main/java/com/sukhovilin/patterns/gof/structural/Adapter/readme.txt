@@ -13,3 +13,6 @@ participants
           o defines an existing interface that needs adapting. 
     * Client   (AdapterApp)
           o collaborates with objects conforming to the Target interface.
+
+Паттерн Адаптер (Adapter) предназначен для преобразования интерфейса одного класса в интерфейс другого.
+Благодаря реализации данного паттерна мы можем использовать вместе классы с несовместимыми интерфейсами.

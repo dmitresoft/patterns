@@ -1,6 +1,8 @@
 package com.sukhovilin.fuateres;
 
 
+import java.util.List;
+
 public class Signature {
 
 
@@ -12,22 +14,14 @@ public class Signature {
 
     private void go() throws CloneNotSupportedException {
 
-        Person p = new Person();
-        p.name = "text";
-        p.ii = 42;
-        p.student = new Student();
-        p.student.sname = "wow";
+        List<Integer> list = List.of(1, 2, 3);
+
+         list.stream().filter(x -> x != 2)
+                 .forEach(System.out::println);
 
 
 
-        Person p1 = (Person) p.clone();
 
-        p.student.sname = "?";
-        p.ii=2222;
-
-        System.out.println(p1.name);
-        System.out.println(p1.ii);
-        System.out.println(p1.student.sname);
 
 
     }
@@ -46,7 +40,7 @@ public class Signature {
     }
 
     class Student {
-        public String sname ;
+        public String sname;
     }
 
 

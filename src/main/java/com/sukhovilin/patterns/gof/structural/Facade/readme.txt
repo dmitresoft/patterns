@@ -11,4 +11,6 @@ participants
     * Subsystem classes   (Bank, Credit, Loan)
           o implement subsystem functionality.
           o handle work assigned by the Facade object.
-          o have no knowledge of the facade and keep no reference to it. 
+          o have no knowledge of the facade and keep no reference to it.
+
+Фасад (Facade) представляет шаблон проектирования, который позволяет скрыть сложность системы с помощью предоставления упрощенного интерфейса для взаимодействия с ней.

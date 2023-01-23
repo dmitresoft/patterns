@@ -19,3 +19,7 @@ participants
     * Client  (InterpreterApp)
           o builds (or is given) an abstract syntax tree representing a particular sentence in the language that the grammar defines. The abstract syntax tree is assembled from instances of the NonterminalExpression and TerminalExpression classes
           o invokes the Interpret operation
+
+Паттерн Интерпретатор (Interpreter) определяет представление грамматики для заданного языка и интерпретатор предложений этого языка.
+Как правило, данный шаблон проектирования применяется для часто повторяющихся операций.
+Хотя паттерн требует понимания теории формальных языков и грамматик, на самом деле он не так сложен в понимании.

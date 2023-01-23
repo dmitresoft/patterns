@@ -13,3 +13,8 @@ participants
           o is configured with a ConcreteStrategy object
           o maintains a reference to a Strategy object
           o may define an interface that lets Strategy access its data.
+
+Паттерн Стратегия (Strategy) представляет шаблон проектирования, который определяет набор алгоритмов,
+инкапсулирует каждый из них и обеспечивает их взаимозаменяемость.
+В зависимости от ситуации мы можем легко заменить один используемый алгоритм другим.
+При этом замена алгоритма происходит независимо от объекта, который использует данный алгоритм.

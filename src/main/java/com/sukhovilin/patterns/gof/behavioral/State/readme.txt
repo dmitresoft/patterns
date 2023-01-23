@@ -12,3 +12,5 @@ participants
           o defines an interface for encapsulating the behavior associated with a particular state of the Context.
     * Concrete State  (RedState, SilverState, GoldState)
           o each subclass implements a behavior associated with a state of Context
+
+Состояние (State) - шаблон проектирования, который позволяет объекту изменять свое поведение в зависимости от внутреннего состояния.

@@ -13,3 +13,8 @@ participants
           o maintains a reference to a Component object and defines an interface that conforms to Component's interface. 
     * ConcreteDecorator   (Borrowable)
           o adds responsibilities to the component.
+
+Декоратор (Decorator) представляет структурный шаблон проектирования, который позволяет динамически подключать к объекту дополнительную функциональность.
+
+Для определения нового функционала в классах нередко используется наследование.
+Декораторы же предоставляет наследованию более гибкую альтернативу, поскольку позволяют динамически в процессе выполнения определять новые возможности у объектов.
