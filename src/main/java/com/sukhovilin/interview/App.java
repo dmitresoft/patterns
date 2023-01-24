@@ -6,8 +6,68 @@ import java.util.*;
 public class App {
 
     public static void main(String[] args) {
-        new App().go10();
+        new App().go12();
+    }
 
+    private void go12() {
+
+    }
+
+    private void go11() {
+
+
+        MyStack2 s = new MyStack2();
+        s.push(1);
+        s.push(2);
+        s.push(3);
+
+        System.out.println(s.pop());
+        System.out.println(s.pop());
+        System.out.println(s.pop());
+        System.out.println(s.pop());
+
+
+    }
+
+    class MyStack2 {
+        List<Integer> list = new LinkedList<>();
+        public void push(Integer x) {
+            list.add(x);
+        }
+        public Integer pop() {
+            var it1 = list.iterator();
+            var it2 = list.iterator();
+            if (it1.hasNext()) it1.next();  // +1
+            while (it1.hasNext()) {
+                it1.next();
+                it2.next();
+            }
+            Integer result = null;
+            if (it2.hasNext()) {
+                result = it2.next();
+                it2.remove();
+            }
+            return result;
+        }
+    }
+
+    class MyStack1 {
+
+        List<Integer> list = new LinkedList<>();
+
+        public void push(Integer x) {
+            list.add(0, x);
+        }
+
+        public Integer pop() {
+            Integer result = null;
+            var it = list.iterator();
+            if (it.hasNext()) {
+                result = it.next();
+                it.remove();
+            }
+            return result;
+        }
     }
 
     private void go10() {
@@ -34,20 +94,12 @@ public class App {
 
     }
 
-    private void go9() {
-
-        // 1234
-        // 4321
-
-        String str = "Hello world";
-        byte[] bs = str.getBytes();
-
+    private void go9() { // SWAP STRING
+        byte[] bs = "Hello world".getBytes();
         for (int i = 0; i < bs.length / 2; i++) {
             swap(bs, i, bs.length - i - 1);
         }
-
         System.out.println(new String(bs));
-
     }
 
     static void swap(byte[] arr, int from, int to) {
@@ -89,18 +141,13 @@ public class App {
                     break;
                 }
             }
-            if (flag) {
-                System.out.println(candidate);
-            }
+            if (flag) System.out.println(candidate);
         }
-
     }
 
     private void go6() {
-        int[] arr = {5, 7, 2, 7, 5, 2, 5};
-
+        int[] arr = {1, 5, 7, 2, 7, 5, 2, 5};
         for (int x : arr) {
-
             int count = 0;
             for (int j : arr) {
                 if (x == j) count++;
@@ -120,12 +167,10 @@ public class App {
         for (int i : a) {
             s1 += i;
         }
-
         int s2 = 0;
         for (int i = 0; i <= 10; i++) { //s2 = 10 * (10 + 1) / 2;
             s2 += i;
         }
-
         System.out.println(s2);
         System.out.println(s2 - s1);
     }
@@ -146,7 +191,6 @@ public class App {
         }
         return true;
     }
-
 
     private void go3() {
         List<Integer> list = new ArrayList<>(List.of(1, 2, 3, 4, 5, 6, 7, 8));
@@ -182,43 +226,18 @@ public class App {
 
     }
 
-    private void go1() {
-        Stack<Integer> s1 = new Stack<>();
-        s1.addAll(List.of(2, 3, 4, 1, 5));
-
-        Stack<Integer> s2 = new Stack<>();
-
-        System.out.println(s1);
-
-        while (!s1.isEmpty()) {
-
-            int tmp = s1.pop();
-            while (!s2.isEmpty() && s2.peek() > tmp) {
-                s1.push(s2.pop());
+    private void go1() { // STACK SORT
+        Stack<Integer> stack = new Stack<>();
+        stack.addAll(List.of(2, 3, 4, 1, 5));
+        Stack<Integer> help = new Stack<>();
+        while (!stack.isEmpty()) {
+            int tmp = stack.pop();
+            while (!help.isEmpty() && help.peek() > tmp) {
+                stack.push(help.pop());
             }
-
-            s2.push(tmp);
-
+            help.push(tmp);
         }
-
-
-        System.out.println(s2);
+        System.out.println(help);
     }
 
-    private static int popmax(Stack<Integer> s) {
-
-
-        int max = -1;
-
-
-        while (!s.isEmpty()) {
-            if (max < s.peek()) {
-                max = s.peek();
-            }
-        }
-        while (!s.isEmpty()) {
-            if (max == s.peek()) return s.pop();
-        }
-        return -1;
-    }
 }

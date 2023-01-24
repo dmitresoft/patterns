@@ -17,12 +17,12 @@ public class Rotation {
         System.out.println(list);
     }
 
-    private void rotate2(List<Integer> list, int n) {
-        for (int i = 0; i < n; i++) {
-            var item = list.remove(list.size() - 1);
-            list.add(0, item);
-        }
+private void rotate2(List<Integer> list, int n) { // ->
+    for (int i = 0; i < n; i++) {
+        var item = list.remove(list.size() - 1);
+        list.add(0, item);
     }
+}
 
     private void case1(List<Integer> list) { // <--
         System.out.println(list);
@@ -31,7 +31,7 @@ public class Rotation {
 
     }
 
-    private void rotate1(List<Integer> list, int n) {
+    private void rotate1(List<Integer> list, int n) { // <--
         for (int i = 0; i < n; i++)
             list.add(list.remove(0));
     }

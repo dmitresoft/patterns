@@ -12,10 +12,9 @@ public class Factorial {
 		while (n >= 0) {
 			System.out.printf("%d - %0,2d\n", n, factorial(n--));
 		}
-
 	}
 
-	public static final long factorial(long n) {
+	public static long factorial(long n) {
 		if (n == 0)
 			return 1;
 		return n * factorial(n - 1);
