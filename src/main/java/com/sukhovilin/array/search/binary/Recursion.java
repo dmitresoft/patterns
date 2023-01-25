@@ -29,7 +29,7 @@ public class Recursion {
 		return search(a, t, 0, a.length - 1);
 	}
 
-	private static final int search(int[] a, int target, int low, int high) {
+	private static int search(int[] a, int target, int low, int high) {
 
 		if (high < low)
 			return -1;

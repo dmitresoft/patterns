@@ -1,16 +1,123 @@
 package com.sukhovilin.interview;
 
-import java.nio.channels.ClosedByInterruptException;
 import java.util.*;
 
 public class App {
 
     public static void main(String[] args) {
-        new App().go12();
+        new App().SECOND_MIN();
+    }
+
+    private void SECOND_MIN() {
+        int[] array = {10, 7, 8, 1, 8, 7, 6};
+        int min1 = Integer.MAX_VALUE, min2 = Integer.MIN_VALUE;
+        for (int i : array) {
+            if (i < min1) {
+                min2 = min1;
+                min1 = i;
+            } else if (i < min2) min2 = i;
+        }
+        System.out.println(min1);
+        System.out.println(min2);
+    }
+
+    private void go13() {
+        int[] S = {1, 2, 1};
+        findPowerSet(S);
+    }
+
+    public static void findPowerSet(int[] arr) {
+        Arrays.sort(arr);
+        int n = arr.length * arr.length;
+        Set<List<Integer>> set = new HashSet<>();
+        for (int i = 0; i < n; i++) { // генерируем каждое подмножество одно за другим
+            List<Integer> subset = new ArrayList<>();
+            for (int j = 0; j < arr.length; j++) {
+                if ((i & (1 << j)) != 0) {
+                    subset.add(arr[j]);
+                }
+            }
+            set.add(subset);
+        }
+        System.out.println(set);
+    }
+
+    int secondHighest(int... nums) {
+        int high1 = Integer.MIN_VALUE;
+        int high2 = Integer.MIN_VALUE;
+        for (int num : nums) {
+            if (num > high1) {
+                high2 = high1;
+                high1 = num;
+            } else if (num > high2) {
+                high2 = num;
+            }
+        }
+        return high2;
     }
 
     private void go12() {
 
+        int[] array = {10, 7, 8, 1, 8, 7, 6};
+
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array.length; j++) {
+                if (i == j) continue;
+                if (array[i] == array[j]) {
+                    System.out.println(array[i]);
+                    i = array.length;
+                    break;
+                }
+            }
+        }
+
+
+        //System.out.println("Index of a local minima is " + localMin(arr, arr.length));
+    }
+
+    private void LOCAL_MIN(int[] arr) {
+        for (int i = 1; i < arr.length - 1; i++) {
+            if ((arr[i] < arr[i - 1]) && (arr[i] < arr[i + 1])) {
+                System.out.println("index=" + i + " value=" + arr[i]);
+            }
+        }
+    }
+
+    private void min1(int[] arr) {
+
+
+        for (int i = 0; i < arr.length; i++) {
+            int sum = 0;
+            for (int j = 0; j < i; j++) {
+                sum += arr[j];
+            }
+            if (sum < arr[i]) System.out.println(arr[i]);
+        }
+
+    }
+
+    public int localMin(int[] arr, int n) {
+        return localMinUtil(arr, 0, n - 1, n);
+    }
+
+    public int localMinUtil(int[] arr, int low, int high, int n) {
+        int mid = low + (high - low) / 2;
+        // Compare middle element with its neighbours
+        // (if neighbours exist)
+        if (mid == 0 || arr[mid - 1] > arr[mid] && mid == n - 1 ||
+                arr[mid] < arr[mid + 1])
+            return mid;
+
+            // If middle element is not minima and its left
+            // neighbour is smaller than it, then left half
+            // must have a local minima.
+        else if (mid > 0 && arr[mid - 1] < arr[mid])
+            return localMinUtil(arr, low, mid - 1, n);
+
+        // If middle element is not minima and its right
+        // neighbour is smaller than it, then right half
+        // must have a local minima.
+        return localMinUtil(arr, mid + 1, high, n);
     }
 
     private void go11() {
@@ -31,9 +138,11 @@ public class App {
 
     class MyStack2 {
         List<Integer> list = new LinkedList<>();
+
         public void push(Integer x) {
             list.add(x);
         }
+
         public Integer pop() {
             var it1 = list.iterator();
             var it2 = list.iterator();

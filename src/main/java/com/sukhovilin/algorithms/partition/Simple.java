@@ -42,7 +42,7 @@ public class Simple {
 	}
 
 	private static void swap(final int[] arr, final int from, final int to) {
-		final int tmp = arr[from];
+		int tmp = arr[from];
 		arr[from] = arr[to];
 		arr[to] = tmp;
 	}

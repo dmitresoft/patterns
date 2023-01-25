@@ -51,42 +51,44 @@ public class GreedyApp {
         }
     }
 
-}
+    static class Bag {
 
-class Bag {
+        private final int maxWeight;
+        private final List<Item> items = new ArrayList<>();
+        private int currentWeight;
+        private int currentCost;
 
-    private final int maxWeight;
-    private final List<Item> items = new ArrayList<>();
-    private int currentWeight;
-    private int currentCost;
+        public Bag(int maxWeight) {
+            this.maxWeight = maxWeight;
+            currentCost = 0;
+        }
 
-    public Bag(int maxWeight) {
-        this.maxWeight = maxWeight;
-        currentCost = 0;
+        public int getMaxWeight() {
+            return maxWeight;
+        }
+
+        public int getCurrentCost() {
+            return currentCost;
+        }
+
+        public int getCurrentWeight() {
+            return currentWeight;
+        }
+
+        public void addItem(Item item) {
+            items.add(item);
+            currentWeight += item.weight();
+            currentCost += item.cost();
+        }
+
+
     }
 
-    public int getMaxWeight() {
-        return maxWeight;
+    record Item(String name, int weight, int cost) implements Comparable<Item> {
+        @Override
+        public int compareTo(Item o) {
+            return this.cost > o.cost ? -1 : 1;
+        }
     }
 
-    public int getCurrentCost() {
-        return currentCost;
-    }
-
-    public int getCurrentWeight() {
-        return currentWeight;
-    }
-
-    public void addItem(Item item) {
-        items.add(item);
-        currentWeight += item.weight();
-        currentCost += item.cost();
-    }
-}
-
-record Item(String name, int weight, int cost) implements Comparable<Item> {
-    @Override
-    public int compareTo(Item o) {
-        return this.cost > o.cost ? -1 : 1;
-    }
 }
