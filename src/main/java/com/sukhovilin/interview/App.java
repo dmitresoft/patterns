@@ -5,7 +5,11 @@ import java.util.*;
 public class App {
 
     public static void main(String[] args) {
-        new App().SECOND_MIN();
+        new App().go14();
+    }
+
+    private void go14() {
+        HashMap<Integer, Integer> map = new LinkedHashMap<>();
     }
 
     private void SECOND_MIN() {
