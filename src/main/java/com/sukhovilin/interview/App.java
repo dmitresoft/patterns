@@ -5,12 +5,74 @@ import java.util.*;
 public class App {
 
     public static void main(String[] args) {
-        new App().go14();
+        new App().go16();
+    }
+
+    private void go16() {
+
+        String s = "Java"+1+2+"Quiz"+""+(3+4);
+        System.out.println(s);
+
+        List<Integer> ints = List.of(1, 3, 5, 7, 9, 10, 23);
+
+        Random r = new Random();
+        Iterator<Integer> it = ints.iterator();
+
+        int x =0;
+        int i =0;
+        while (it.hasNext()){
+            i++;
+
+            System.out.println(it.next());
+
+        }
+
+
+    }
+
+
+    private int count2(int n) {
+        int result = 0;
+        while (n > 0) {
+            if (n % 10 == 2) result++;
+            n = n / 10;
+        }
+        return result;
+    }
+
+    public static int add(int a, int b) {
+        if (b == 0) return a;
+        int sum = a ^ b;      // добавляем без переноса
+        int carry = (a & b) << 1;  // перенос без суммирования
+        return add(sum, carry);    // рекурсия
     }
 
     private void go14() {
-        HashMap<Integer, Integer> map = new LinkedHashMap<>();
+
+        int a = 4;
+        int b = 5;
+
+
+        int k = sign(a - b);
+        int q = flip(k);
+
+        int r = a * k + b * q;
+        System.out.println(r);
+
     }
+
+    int flip(int a) {
+        return 1 ^ a;
+    }
+
+    int sign(int a) {
+        return flip(a) & 0x1;
+    }
+
+//    int sign1(int a) {
+//        return (a & 0x1) ^ 1;
+//    }
+
 
     private void SECOND_MIN() {
         int[] array = {10, 7, 8, 1, 8, 7, 6};

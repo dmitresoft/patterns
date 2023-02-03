@@ -18,10 +18,10 @@ public class BracketsCounter {
 	}
 
 	private static boolean process(String text) {
-		Queue<Character> queue = new LinkedBlockingQueue<Character>();
+		Queue<Character> queue = new LinkedBlockingQueue<>();
 
 		for (int i = 0; i < text.length(); i++) {
-			Character ch = text.charAt(i);
+			char ch = text.charAt(i);
 
 			if (ch == '(') {
 				queue.add(ch);
