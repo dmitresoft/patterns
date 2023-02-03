@@ -3,7 +3,7 @@ package com.sukhovilin.tasks.soring_squares;
 import java.util.Arrays;
 
 /**
- * Real Deutsche Bank question.
+ * Deutsche Bank, real interview question.
  * Sorting square array.
  */
 public class App {
