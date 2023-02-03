@@ -2,6 +2,7 @@ package com.sukhovilin.tasks.polindrom;
 
 /**
  * Yandex, real interview, stage 1. Find the palindrome string.
+ * Memory limit O(1)
  */
 public class App {
     public static void main(String[] args) {
