@@ -9,16 +9,6 @@ public class App {
 
     }
 
-
-    private int count2(int n) {
-        int result = 0;
-        while (n > 0) {
-            if (n % 10 == 2) result++;
-            n = n / 10;
-        }
-        return result;
-    }
-
     public static int add(int a, int b) {
         if (b == 0) return a;
         int sum = a ^ b;      // добавляем без переноса
@@ -26,33 +16,8 @@ public class App {
         return add(sum, carry);    // рекурсия
     }
 
-    private void go14() {
-
-        int a = 4;
-        int b = 5;
-
-
-        int k = sign(a - b);
-        int q = flip(k);
-
-        int r = a * k + b * q;
-        System.out.println(r);
-
-    }
-
-    int flip(int a) {
-        return 1 ^ a;
-    }
-
-    int sign(int a) {
-        return flip(a) & 0x1;
-    }
-
-
     private void go12() {
-
         int[] array = {10, 7, 8, 1, 8, 7, 6};
-
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array.length; j++) {
                 if (i == j) continue;
@@ -63,25 +28,10 @@ public class App {
                 }
             }
         }
-
-
         //System.out.println("Index of a local minima is " + localMin(arr, arr.length));
     }
 
 
-
-    private void min1(int[] arr) {
-
-
-        for (int i = 0; i < arr.length; i++) {
-            int sum = 0;
-            for (int j = 0; j < i; j++) {
-                sum += arr[j];
-            }
-            if (sum < arr[i]) System.out.println(arr[i]);
-        }
-
-    }
 
     private void go10() {
         String str = "analogy";
@@ -107,9 +57,6 @@ public class App {
 
     }
 
-
-
-
     private void go8() {
         int[] arr = {100, 180, 260, 310, 40, 535, 695};
 
@@ -132,7 +79,6 @@ public class App {
         return profit(arr, start + 1, profit);
     }
 
-
     private void go6() {
         int[] arr = {1, 5, 7, 2, 7, 5, 2, 5};
         for (int x : arr) {
@@ -148,8 +94,6 @@ public class App {
         }
 
     }
-
-
 
     private void go4() {
         List<Integer> list1 = new ArrayList<>(List.of(7, 8, 2, 7, 8));
@@ -201,7 +145,5 @@ public class App {
         System.out.println(list);
 
     }
-
-
 
 }
