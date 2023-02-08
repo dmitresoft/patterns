@@ -1,6 +1,6 @@
-package com.sukhovilin.algorithms.lists.stack;
+package com.sukhovilin.tasks.my_linkedlist;
 
-public class Stack {
+public class ListDemo {
 
     public static void main(String[] args) {
         LinkedList list = new LinkedList();
@@ -16,10 +16,15 @@ public class Stack {
     static class LinkedList {
 
         private ListItem first;
+        private ListItem last;
 
         public void add(ListItem item) {
-            item.next = first;
-            first = item;
+            if (first == null)
+                first = item;
+            else
+                last.next = item;
+
+            last = item;
         }
 
         public void display() {
@@ -39,6 +44,6 @@ public class Stack {
         public ListItem(int data) {
             this.data = data;
         }
-
     }
+
 }

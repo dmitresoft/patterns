@@ -1,4 +1,4 @@
-package com.sukhovilin.tasks.sawp_string;
+package com.sukhovilin.tasks.swap_string;
 
 public class App {
 

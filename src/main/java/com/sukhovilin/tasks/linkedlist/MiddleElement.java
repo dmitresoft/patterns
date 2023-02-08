@@ -1,4 +1,4 @@
-package com.sukhovilin.fuateres.linkedlist;
+package com.sukhovilin.tasks.linkedlist;
 
 import java.util.Iterator;
 import java.util.List;

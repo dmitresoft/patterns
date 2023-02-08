@@ -8,7 +8,7 @@ import java.util.Arrays;
  * 
  * For example 0+1=1 and 3+5=8.
  */
-public class Program {
+public class Simple {
 
 	public static void main(String[] args) {
 

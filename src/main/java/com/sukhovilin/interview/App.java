@@ -48,27 +48,6 @@ public class App {
         return flip(a) & 0x1;
     }
 
-    private void go13() {
-        int[] S = {1, 2, 1};
-        findPowerSet(S);
-    }
-
-    public static void findPowerSet(int[] arr) {
-        Arrays.sort(arr);
-        int n = arr.length * arr.length;
-        Set<List<Integer>> set = new HashSet<>();
-        for (int i = 0; i < n; i++) { // генерируем каждое подмножество одно за другим
-            List<Integer> subset = new ArrayList<>();
-            for (int j = 0; j < arr.length; j++) {
-                if ((i & (1 << j)) != 0) {
-                    subset.add(arr[j]);
-                }
-            }
-            set.add(subset);
-        }
-        System.out.println(set);
-    }
-
 
     private void go12() {
 
@@ -89,13 +68,7 @@ public class App {
         //System.out.println("Index of a local minima is " + localMin(arr, arr.length));
     }
 
-    private void LOCAL_MIN(int[] arr) {
-        for (int i = 1; i < arr.length - 1; i++) {
-            if ((arr[i] < arr[i - 1]) && (arr[i] < arr[i + 1])) {
-                System.out.println("index=" + i + " value=" + arr[i]);
-            }
-        }
-    }
+
 
     private void min1(int[] arr) {
 

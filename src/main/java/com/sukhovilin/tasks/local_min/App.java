@@ -2,12 +2,21 @@ package com.sukhovilin.tasks.local_min;
 
 public class App {
     public static void main(String[] args) {
-        new App().go();
+        int[] arr = {3, 4, 8, 1, 5};
+        new App().case1(arr);
+        new App().case2(arr);
     }
 
-    private void go() {
-        int[] arr = {3,4,8,1,5};
-        int result = localMin(arr, 1);
+    private void case2(int[] arr) {
+        for (int i = 1; i < arr.length - 1; i++) {
+            if ((arr[i] < arr[i - 1]) && (arr[i] < arr[i + 1])) {
+                System.out.println("index=" + i + " value=" + arr[i]);
+            }
+        }
+    }
+
+    private void case1(int[] arr) { // woes not work
+        int result = localMin(arr, arr.length);
         System.out.println(result);
     }
 
