@@ -18,9 +18,7 @@ public class App {
         Person p4 = new Person("Oleg", List.of(p1, p3));
         Person p5 = new Person("Nik", List.of(p1, p4));
 
-        Collection<Person> people = List.of(
-                p1, p2, p3, p4, p5
-        );
+        Person[] people = {p1, p2, p3, p4, p5};
 
         new App().case1(people);
         new App().case2(people);
@@ -29,7 +27,7 @@ public class App {
     /**
      * Simple O(N2)
      */
-    private void case1(Collection<Person> people) {
+    private void case1(Person[] people) {
         boolean hasFrieds = false;
         for (Person a1 : people) {
             for (Person a2 : people) {
@@ -48,17 +46,15 @@ public class App {
     /**
      * With optimization.
      */
-    private void case2(Collection<Person> people) {
-
-        Person[] list = people.toArray(new Person[0]);
+    private void case2(Person[] people) {
 
         int f = 0;
-        int l = list.length - 1;
+        int l = people.length - 1;
 
-        for (int i = 0; i < list.length; i++) { // while (f <= l)
+        for (int i = 0; i < people.length; i++) { // while (f <= l)
 
-            Person p1 = list[f];
-            Person p2 = list[l];
+            Person p1 = people[f];
+            Person p2 = people[l];
 
             if (p1.isFriend(p2)) {
                 f++;
