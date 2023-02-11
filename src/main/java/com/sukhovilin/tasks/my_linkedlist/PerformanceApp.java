@@ -8,17 +8,18 @@ public class PerformanceApp {
 
     public static void main(String[] args) {
         int lim = 1_000_000;
+        new PerformanceApp().go4(lim);
         new PerformanceApp().go3(lim);
         new PerformanceApp().go2(lim);
         new PerformanceApp().go1(lim);
     }
 
-    private void go3(int lim) {
+    private void go4(int lim) {
 
-        ArrayList<Integer> list = new ArrayList<>();
+        Integer[] list = new Integer[lim];
 
         for (int i = 0; i < lim; i++) {
-            list.add(10);
+            list[i] = i;
         }
 
         long start = System.nanoTime();
@@ -29,12 +30,32 @@ public class PerformanceApp {
         System.out.println(sum + " arr time " + (System.nanoTime() - start));
     }
 
+    private void go3(int lim) {
+
+        ArrayList<Integer> list = new ArrayList<>();
+
+        for (int i = 0; i < lim; i++) {
+            list.add(i);
+        }
+
+        long start = System.nanoTime();
+        long sum = 0;
+//        var it = list.iterator();
+//        while (it.hasNext()){
+//            sum += it.next();
+//        }
+        for (Integer integer : list) {
+            sum += integer;
+        }
+        System.out.println(sum + " arl time " + (System.nanoTime() - start));
+    }
+
 
     private void go1(int lim) {
 
         LinkedList<Integer> list = new LinkedList<>();
         for (int i = 0; i < lim; i++) {
-            list.add(10);
+            list.add(i);
         }
 
         long start = System.nanoTime();
@@ -49,7 +70,7 @@ public class PerformanceApp {
     private void go2(int lim) {
         MyLinkedList<Integer> list = new MyLinkedList<>();
         for (int i = 0; i < lim; i++) {
-            list.add(10);
+            list.add(i);
         }
 
         long start = System.nanoTime();
