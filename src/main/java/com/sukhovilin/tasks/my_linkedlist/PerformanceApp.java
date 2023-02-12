@@ -1,17 +1,36 @@
 package com.sukhovilin.tasks.my_linkedlist;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.LinkedList;
+import java.lang.reflect.Array;
+import java.nio.channels.Pipe;
+import java.util.*;
 
 public class PerformanceApp {
 
     public static void main(String[] args) {
         int lim = 1_000_000;
+        new PerformanceApp().go5(lim);
         new PerformanceApp().go4(lim);
         new PerformanceApp().go3(lim);
         new PerformanceApp().go2(lim);
         new PerformanceApp().go1(lim);
+    }
+
+    private void go5(int lim) {
+
+        MyArr<Integer> list = new MyArr<>();
+
+        for (int i = 0; i < lim; i++) {
+            list.add(i);
+        }
+
+        long start = System.nanoTime();
+        long sum = 0;
+
+        for (Integer integer : list) {
+            sum += integer;
+        }
+        System.out.println(sum + " mya time " + (System.nanoTime() - start));
+
     }
 
     private void go4(int lim) {
@@ -40,10 +59,7 @@ public class PerformanceApp {
 
         long start = System.nanoTime();
         long sum = 0;
-//        var it = list.iterator();
-//        while (it.hasNext()){
-//            sum += it.next();
-//        }
+
         for (Integer integer : list) {
             sum += integer;
         }
@@ -133,5 +149,42 @@ public class PerformanceApp {
         }
 
     }
+
+    class MyArr<T> implements Iterable<T> {
+
+        private Object[] items = new Object[16];
+
+        int pointer = 0;
+
+        @Override
+        public Iterator<T> iterator() {
+
+            return new Iterator<T>() {
+
+                int pointer = 0;
+
+                @Override
+                public boolean hasNext() {
+                    return items[pointer] != null;
+                }
+
+                @Override
+                public T next() {
+                    return (T) items[pointer++];
+                }
+            };
+
+        }
+
+        public void add(T item) {
+            if (pointer == items.length) {
+                items = Arrays.copyOf(items, items.length * 2, Object[].class);
+            }
+            items[pointer] = item;
+            pointer++;
+        }
+
+    }
+
 
 }
