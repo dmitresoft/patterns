@@ -19,8 +19,8 @@ public class Person {
     }
 
     public boolean isFriend(Person person) {
-        for (Person person1 : persons) {
-            if (person1.equals(person)) {
+        for (Person item : persons) {
+            if (item.equals(person)) {
                 return true;
             }
         }

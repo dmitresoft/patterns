@@ -51,7 +51,7 @@ public class App {
         int f = 0;
         int l = people.length - 1;
 
-        for (int i = 0; i < people.length; i++) { // while (f <= l)
+        while (f != l){
 
             Person p1 = people[f];
             Person p2 = people[l];
