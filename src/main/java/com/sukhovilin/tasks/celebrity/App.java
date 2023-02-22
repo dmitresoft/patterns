@@ -1,11 +1,10 @@
 package com.sukhovilin.tasks.celebrity;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 /**
- * Deutsche Bank, real interview question.
+ * DB, real interview question.
  * Find the celebrity.
  */
 public class App {
