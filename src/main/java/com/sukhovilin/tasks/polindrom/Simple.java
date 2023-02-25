@@ -5,14 +5,15 @@ package com.sukhovilin.tasks.polindrom;
  * Memory limit O(1)
  * Time limit O(n)
  */
-public class App {
+public class Simple {
     public static void main(String[] args) {
         String[] texts = {"Казак",
                 "А роза упала на лапу Азора",
+                "Wrong String",
                 "Do geese see God?",
                 "Madam, I'm Adam"
         };
-        new App().go(texts);
+        new Simple().go(texts);
     }
 
     private void go(String[] texts) {
