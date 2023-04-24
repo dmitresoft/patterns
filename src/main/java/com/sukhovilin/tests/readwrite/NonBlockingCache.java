@@ -15,6 +15,7 @@ public class NonBlockingCache<K, V> implements Cache<K, V> {
 
     @Override
     public void add(Collection<V> items, Function<V, K> key) {
+
         writeLock.lock();
         try {
             cache.clear();
