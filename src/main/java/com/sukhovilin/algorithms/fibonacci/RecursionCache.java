@@ -3,11 +3,11 @@ package com.sukhovilin.algorithms.fibonacci;
 import java.util.HashMap;
 import java.util.Map;
 
-public class RecurtionAndCache {
+public class RecursionCache {
 
     public static void main(String[] args) {
 
-        for (int i = 0; i <= 46; i += 2) {
+        for (int i = 0; i <= 50; i += 2) {
             long start = System.nanoTime();
             long fib = fib(i, new HashMap<>());
             System.out.println("fib(" + i + ") = " + fib + "\t" + (System.nanoTime() - start));

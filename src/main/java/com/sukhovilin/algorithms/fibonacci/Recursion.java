@@ -1,6 +1,6 @@
-package com.sukhovilin.algorithms.recursion;
+package com.sukhovilin.algorithms.fibonacci;
 
-public class Fibonacci {
+public class Recursion {
 
     public static void main(String[] args) {
         for (int i = 0; i <= 44; ++i) {

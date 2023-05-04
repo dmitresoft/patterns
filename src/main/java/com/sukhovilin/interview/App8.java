@@ -1,13 +1,11 @@
 package com.sukhovilin.interview;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.SortedMap;
+import java.util.*;
 
 public class App8 {
 
     public static void main(String[] args) {
+        new App8().go();
         new App8().go1();
     }
 
@@ -15,59 +13,40 @@ public class App8 {
 
     private void go() {
 
-        int[] arr = {1, 2, 33, 4, 5, 4, 3, 2, 1};
-        System.out.println("len = " + arr.length);
-        int[] m = new int[arr.length - 1];
+        int n = 13;
 
-        for (int i = 1; i < arr.length; i++) {
-            m[i - 1] = arr[i - 1] - arr[i];
+        long a = 0;
+        long x1 = 0, x2 = 1;
+        for (int i = 2; i <= n; i++) {
+            a = x1 + x2;
+            x1 = x2;
+            x2 = a;
         }
-        System.out.println(Arrays.toString(m));
-        int s = 0;
-        for (int j : m) {
-            s += j;
+        System.out.println(a);
+
+    }
+
+    private boolean simple(int n) {
+        for (int i = 2; i < n; ++i) {
+            if (n % i == 0) return false;
         }
-        System.out.println("s = " + s);
-
-
+        return true;
     }
 
     private void go1() {
 
-        cnt = 0;
-        System.out.println("fib " + fib(34));
-        System.out.println("cnt " + cnt);
+        System.out.println(fib(13));
 
-        cnt = 0;
-        System.out.println("fib " + fib2(34));
-        System.out.println("cnt " + cnt);
-
-        cnt = 0;
-        System.out.println("fib " + fib(5));
-        System.out.println("cnt " + cnt);
-
-        System.out.println(Arrays.toString(cache));
-//        for (int i = 0; i <= 50; i++) {
-//            var a = fib(i);
-//            System.out.println("fib(" + i + ") = " + a);
-//        }
     }
 
-    long[] cache = new long[100];
+    private int[] compact(int[] arr) {
+        return Arrays.stream(arr).filter(x -> x != 0).toArray();
+    }
 
-    long fib(long n) {
+    private long fib(int n) {
         if (n <= 1) return n;
-        if (cache[(int) n] == 0) {
-            cnt++;
-            cache[(int) n] = fib(n - 1) + fib(n - 2);
-        }
-        return cache[(int) n];
+        return fib(n - 1) + fib(n - 2);
     }
 
-    long fib2(long n) {
-        if (n <= 1) return n;
-        cnt++;
-        return fib2(n - 1) + fib2(n - 2);
-    }
 
 }
